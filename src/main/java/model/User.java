@@ -1,11 +1,11 @@
-package main.java;
+package main.java.model;
 
 import com.google.gson.GsonBuilder;
 import com.google.gson.Gson;
 
 import java.util.List;
 
-class User {
+public class User {
     private int id;
     private String first_name;
     private String last_name;

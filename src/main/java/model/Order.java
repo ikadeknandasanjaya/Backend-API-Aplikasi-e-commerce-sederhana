@@ -1,4 +1,4 @@
-package main.java;
+package main.java.model;
 
 public class Order {
     private int id;
@@ -21,8 +21,8 @@ public class Order {
         return id;
     }
 
-    public int getBuyer() {
-        return buyer;
+    public String getBuyer() {
+        return String.valueOf(buyer);
     }
 
     public String getNote() {
