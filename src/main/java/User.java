@@ -3,11 +3,16 @@ package main.java;
 import com.google.gson.GsonBuilder;
 import com.google.gson.Gson;
 
+import java.util.List;
+
 class User {
     private int id;
     private String first_name;
     private String last_name;
     private String email;
+
+    private List<Product> products; // New field for associated products
+
 
     public User(int id, String first_name,String last_name , String email,String phone_number, String type) {
         this.id = id;
@@ -77,5 +82,13 @@ class User {
                 .serializeNulls()
                 .create();
         return gson.toJson(this);
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 }
