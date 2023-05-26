@@ -1,6 +1,6 @@
 package main.java.model;
 
-public class Addresses {
+public class Address {
     private int users;
     private String type;
     private String line1;
@@ -9,8 +9,8 @@ public class Addresses {
     private String province;
     private String postcode;
 
-    public Addresses(int users, String type, String line1, String line2, String city, String province, String postcode) {
-        this.users = users;
+    public Address(String users, String type, String line1, String line2, String city, String province, String postcode) {
+        this.users = Integer.parseInt(users);
         this.type = type;
         this.line1 = line1;
         this.line2 = line2;
