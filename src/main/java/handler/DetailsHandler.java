@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import static main.java.ECommerceAPI.sendResponse;
-import static main.java.util.GerOrderDetailsByOrderId.getOrderDetailsByOrderId;
+import static main.java.util.GetOrderDetailsByOrderId.getOrderDetailsByOrderId;
 
 public class DetailsHandler implements HttpHandler {
     @Override
