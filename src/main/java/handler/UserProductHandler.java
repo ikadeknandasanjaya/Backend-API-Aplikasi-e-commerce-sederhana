@@ -21,8 +21,6 @@ public class UserProductHandler implements HttpHandler {
         String query = exchange.getRequestURI().getQuery();
         String userId = null;
 
-
-        // Parsing parameter userId dari query string
         String[] queryParams = query.split("&");
         for (String param : queryParams) {
             String[] keyValue = param.split("=");
@@ -50,16 +48,13 @@ public class UserProductHandler implements HttpHandler {
                 }
                 String respon = gson.toJson(jsonArray);
 
-                // Mengirim respon dengan data produk dalam format JSON
                 sendResponse(exchange, respon, 200);
             } catch (SQLException e) {
                 e.printStackTrace();
-                // Mengirim respon error jika terjadi kesalahan
                 String errorResponse = "Terjadi kesalahan dalam mengambil data produk";
                 sendResponse(exchange, errorResponse, 500);
             }
         } else {
-            // Parameter userId tidak ditemukan
             String errorResponse = "Parameter userId tidak ditemukan";
             sendResponse(exchange, errorResponse, 400);
         }
