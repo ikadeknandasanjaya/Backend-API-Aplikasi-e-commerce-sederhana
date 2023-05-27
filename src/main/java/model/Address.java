@@ -2,16 +2,16 @@ package main.java.model;
 
 public class Address {
     private int users;
-    private String type;
+    private String TYPE;
     private String line1;
     private String line2;
     private String city;
     private String province;
     private String postcode;
 
-    public Address(String users, String type, String line1, String line2, String city, String province, String postcode) {
+    public Address(String users, String TYPE, String line1, String line2, String city, String province, String postcode) {
         this.users = Integer.parseInt(users);
-        this.type = type;
+        this.TYPE = TYPE;
         this.line1 = line1;
         this.line2 = line2;
         this.city = city;
@@ -27,11 +27,11 @@ public class Address {
     }
 
     public String getType() {
-        return type;
+        return TYPE;
     }
 
     public void setType(String type) {
-        this.type = type;
+        this.TYPE = type;
     }
 
     public String getLine1() {

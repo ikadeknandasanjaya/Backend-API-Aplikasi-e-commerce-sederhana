@@ -23,7 +23,6 @@ public class OrdersHandler implements HttpHandler {
         String query = exchange.getRequestURI().getQuery();
         String userId = null;
 
-        // Parsing parameter userId dari query string
         String[] queryParams = query.split("&");
         for (String param : queryParams) {
             String[] keyValue = param.split("=");
@@ -35,10 +34,7 @@ public class OrdersHandler implements HttpHandler {
 
         if (userId != null) {
             try {
-                // Mengambil data pesanan dari database untuk pengguna dengan ID tertentu
                 List<Order> orders = getUserOrders(userId);
-
-                // Mengubah data pesanan menjadi format JSON
 
                 Gson gson = new GsonBuilder()
                         .disableHtmlEscaping()
@@ -50,25 +46,20 @@ public class OrdersHandler implements HttpHandler {
                 for (Order order : orders) {
                     JsonObject orderJson = gson.toJsonTree(order, Order.class).getAsJsonObject();
 
-                    // Mengambil produk yang dimiliki oleh pengguna berdasarkan ID pengguna
                     List<Product> userProducts = getUserProducts(order.getBuyer());
                     JsonArray productsJson = new JsonArray();
                     for (Product product : userProducts) {
                         JsonObject productJson = gson.toJsonTree(product, Product.class).getAsJsonObject();
                         productsJson.add(productJson);
                     }
-
-                    // Menambahkan data produk ke dalam objek pesanan
                     orderJson.add("products", productsJson);
                     ordersJson.add(orderJson);
                 }
 
                 String response = gson.toJson(ordersJson);
-                // Mengirim respon dengan data pesanan dan produk dalam format JSON
-                sendResponse(exchange, ordersJson.toString(), 200);
+                sendResponse(exchange, response, 200);
             } catch (SQLException e) {
                 e.printStackTrace();
-                // Mengirim respon error jika terjadi kesalahan
                 String errorResponse = "Terjadi kesalahan dalam mengambil data pesanan";
                 sendResponse(exchange, errorResponse, 500);
             }
