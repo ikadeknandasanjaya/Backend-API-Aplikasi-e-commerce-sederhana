@@ -11,7 +11,8 @@ import java.sql.*;
 
 public class ECommerceAPI {
     //       Inisialisasi DB di sqlite
-    private static final String basisData = "jdbc:sqlite:/D:\\sqlite\\apiecommerce.db";
+    private static final String basisData = "jdbc:sqlite:D:/Kadek/Semester 2/PBO/tugas2/Backend-API-Aplikasi-e-commerce-sederhana/database/apiecommerce.db";
+
 
     //       Koneksi ke DB di sqlite
     public static Connection koneksi() throws SQLException {
@@ -27,15 +28,16 @@ public class ECommerceAPI {
         System.out.println("Listening to port " + port + " ...");
 
         // endpoint untuk routes API
+        server.createContext("/users/add", new AddUserHandler());
+        server.createContext("/users/addresses", new AddressesHandler());
         server.createContext("/users/products", new UserProductHandler());
         server.createContext("/users", new UserAllHandler());
         server.createContext("/users/", new UserIDHandler());
         server.createContext("/users/buyer", new BuyerHandler());
         server.createContext("/users/seller", new SellerHandler());
         server.createContext("/users/orders", new OrdersHandler());
-//        server.createContext("/users/reviews", new ReviewsHandler());
-//        server.createContext("/users/orders/details", new DetailsHandler());
-
+        server.createContext("/users/reviews", new ReviewsHandler());
+        server.createContext("/users/orders/details", new DetailsHandler());
 
         server.setExecutor(null);
         server.start();
