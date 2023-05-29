@@ -7,7 +7,9 @@ public class OrderDetail {
         private int price;
 
 
-        public OrderDetail(String orderId, int productId, int quantity, int price) {
+
+
+    public OrderDetail(String orderId, int productId, int quantity, int price) {
             this.orderId = Integer.parseInt(orderId);
             this.productId = productId;
             this.quantity = quantity;
@@ -25,5 +27,9 @@ public class OrderDetail {
         public int getQuantity() {
             return quantity;
         }
+
+    public int getPrice() {
+        return price;
+    }
     }
 

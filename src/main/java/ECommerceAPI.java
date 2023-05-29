@@ -28,6 +28,11 @@ public class ECommerceAPI {
         System.out.println("Listening to port " + port + " ...");
 
         // endpoint untuk routes API
+        server.createContext("/users/orders/details/add", new AddDetailsHandler());
+        server.createContext("/users/reviews/add", new AddReviewsHandler());
+        server.createContext("/users/orders/add", new AddOrdersHandler());
+        server.createContext("/users/products/add", new AddProductHandler());
+        server.createContext("/users/addresses/add", new AddAddressesHandler());
         server.createContext("/users/add", new AddUserHandler());
         server.createContext("/users/addresses", new AddressesHandler());
         server.createContext("/users/products", new UserProductHandler());

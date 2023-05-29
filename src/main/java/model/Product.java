@@ -2,18 +2,18 @@ package main.java.model;
 
 public class Product {
     private int id;
-    private String seller;
+    private int seller;
     private String title;
     private String description;
-    private double price;
+    private String price;
     private int stock;
 
     public Product(int id, String seller, String title, String description, double price, int stock) {
         this.id = id;
-        this.seller = seller;
+        this.seller = Integer.parseInt(seller);
         this.title = title;
         this.description = description;
-        this.price = price;
+        this.price = String.valueOf(price);
         this.stock = stock;
     }
 
@@ -27,11 +27,11 @@ public class Product {
         this.id = id;
     }
 
-    public String getSeller() {
+    public int getSeller() {
         return seller;
     }
 
-    public void setSeller(String seller) {
+    public void setSeller(int seller) {
         this.seller = seller;
     }
 
@@ -51,11 +51,11 @@ public class Product {
         this.description = description;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
