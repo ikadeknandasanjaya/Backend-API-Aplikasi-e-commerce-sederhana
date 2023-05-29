@@ -74,16 +74,6 @@ public class User {
     private String phone_number;
     private String type;
 
-//    Untuk mengubah data menjadi ke Json
-    public String ubahJson() {
-        Gson gson = new GsonBuilder()
-                .disableHtmlEscaping()
-                .setPrettyPrinting()
-                .serializeNulls()
-                .create();
-        return gson.toJson(this);
-    }
-
     public List<Product> getProducts() {
         return products;
     }

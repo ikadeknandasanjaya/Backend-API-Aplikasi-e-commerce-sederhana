@@ -14,7 +14,7 @@ public class AddOrder {
         try (Connection connection = api.koneksi();
              PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, order.getId());
-            statement.setString(2, order.getBuyer());
+            statement.setString(2, String.valueOf(order.getBuyer()));
             statement.setString(3, order.getNote());
             statement.setDouble(4, order.getTotal());
             statement.setDouble(5, order.getDiscount());

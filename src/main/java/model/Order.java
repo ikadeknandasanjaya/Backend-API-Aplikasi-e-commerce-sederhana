@@ -1,5 +1,7 @@
 package main.java.model;
 
+import java.util.List;
+
 public class Order {
     private int id;
     private int buyer;
@@ -7,6 +9,30 @@ public class Order {
     private double total;
     private double discount;
     private boolean isPaid;
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setBuyer(int buyer) {
+        this.buyer = buyer;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
+    }
+
+    public void setDiscount(double discount) {
+        this.discount = discount;
+    }
+
+    public void setPaid(boolean paid) {
+        isPaid = paid;
+    }
 
     public Order(int id, int buyer, String note, double total, double discount, boolean isPaid) {
         this.id = id;

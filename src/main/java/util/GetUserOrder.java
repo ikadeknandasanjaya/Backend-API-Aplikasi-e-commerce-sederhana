@@ -11,15 +11,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GetUserOrder {
-    public static List<Order> getUserOrders(String userId) throws SQLException {
+    public static List<Order> getOrder(String orderId) throws SQLException {
         List<Order> orders = new ArrayList<>();
 
-        // Query untuk mendapatkan data pesanan berdasarkan ID pengguna
+        // Query untuk mendapatkan data pesanan berdasarkan ID pembeli
         String query = "SELECT * FROM orders WHERE buyer = ?";
         ECommerceAPI api = new ECommerceAPI();
         try (Connection connection = api.koneksi();
              PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setString(1, userId);
+            statement.setString(1, orderId);
 
             try (ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {

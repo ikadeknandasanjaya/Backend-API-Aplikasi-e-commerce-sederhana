@@ -28,19 +28,14 @@ public class ECommerceAPI {
         System.out.println("Listening to port " + port + " ...");
 
         // endpoint untuk routes API
-        server.createContext("/users/orders/details/add", new AddDetailsHandler());
-        server.createContext("/users/reviews/add", new AddReviewsHandler());
-        server.createContext("/users/orders/add", new AddOrdersHandler());
-        server.createContext("/users/products/add", new AddProductHandler());
-        server.createContext("/users/addresses/add", new AddAddressesHandler());
-        server.createContext("/users/add", new AddUserHandler());
-        server.createContext("/users/addresses", new AddressesHandler());
-        server.createContext("/users/products", new UserProductHandler());
         server.createContext("/users", new UserAllHandler());
         server.createContext("/users/", new UserIDHandler());
-        server.createContext("/users/buyer", new BuyerHandler());
+        server.createContext("/orders/", new OrderHandler());
+        server.createContext("/products", new ProductsAllHandler());
+        server.createContext("/products/", new ProductsHandler());
+        server.createContext("/users/addresses", new AddressesHandler());
         server.createContext("/users/seller", new SellerHandler());
-        server.createContext("/users/orders", new OrdersHandler());
+        server.createContext("/users/buyer", new BuyerHandler());
         server.createContext("/users/reviews", new ReviewsHandler());
         server.createContext("/users/orders/details", new DetailsHandler());
 

@@ -8,11 +8,14 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import main.java.model.User;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.sql.SQLException;
 import java.util.List;
 
 import static main.java.ECommerceAPI.sendResponse;
+import static main.java.util.AddUser.addUser;
 import static main.java.util.GetAllUser.getAllUsers;
 
 public class UserAllHandler implements HttpHandler {
@@ -31,16 +34,44 @@ public class UserAllHandler implements HttpHandler {
                     JsonElement userJson = gson.toJsonTree(user);
                     jsonArray.add(userJson);
                 }
-                String respon = gson.toJson(jsonArray);
-                sendResponse(exchange, respon, 200);
+                String response = gson.toJson(jsonArray);
+                sendResponse(exchange, response, 200);
             } catch (SQLException e) {
                 e.printStackTrace();
-                String responError = "Terjadi kesalahan dalam mengambil data pengguna";
-                sendResponse(exchange, responError, 500);
+                String responseError = "Terjadi kesalahan dalam mengambil data pengguna";
+                sendResponse(exchange, responseError, 500);
+            }
+        } else if ("POST".equals(exchange.getRequestMethod())) {
+            try {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(exchange.getRequestBody()));
+                StringBuilder requestBody = new StringBuilder();
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    requestBody.append(line);
+                }
+                Gson gson = new Gson();
+                User newUser = gson.fromJson(requestBody.toString(), User.class);
+                boolean success = addUser(newUser);
+
+                if (success) {
+                    String response = "Data pengguna berhasil ditambahkan";
+                    sendResponse(exchange, response, 200);
+                } else {
+                    String responseError = "Gagal menambahkan data pengguna";
+                    sendResponse(exchange, responseError, 500);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+                String responseError = "Terjadi kesalahan dalam menambahkan data pengguna";
+                sendResponse(exchange, responseError, 500);
+            } catch (SQLException e) {
+                e.printStackTrace();
+                String responseError = "Terjadi kesalahan dalam akses ke database";
+                sendResponse(exchange, responseError, 500);
             }
         } else {
-            String respon = "Method HTTP yang diminta tidak diizinkan";
-            sendResponse(exchange, respon, 405);
+            String response = "Metode HTTP yang diminta tidak diizinkan";
+            sendResponse(exchange, response, 405);
         }
     }
 }
