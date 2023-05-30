@@ -61,65 +61,65 @@ Mendapatkan seller dengan type seller.\
 
 ### 1. POST /users
 Menambahkan data users.
-<img width="635" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/dda5121a-646a-42dc-b573-dbecacaab515">
+![image](https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/df07c444-48d4-4bbe-b901-d27703d1b1df)
 
 ### 2. POST /products
 Menambahkan data products.
-<img width="630" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/c773f68d-9720-4cf7-901a-f4a6811fe8c6">
+![image](https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/98a2c2b9-8857-4ddf-a15a-05a04408e6d2)
 
 ### 3. POST /orders
 Menambahkan data orders.
-<img width="641" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/09d13742-c62c-4939-bf0a-dc7ef01743da">
+![image](https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/7040bf69-8915-4a7b-97e5-48edcd582847)
 
 ### 4. POST /address
 Menambahkan data alamat.
-<img width="645" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/083bc39b-9018-4d8f-8b77-94d466ce097a">
+![image](https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/ffaf6727-211b-416c-997b-083484758e54)
 
 ### 5. POST /order/details
 Menambahkan data order details.
-<img width="634" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/628eeb6d-7629-4427-ad03-e98d948eb97e">
+![image](https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/8dd77c83-f111-4f69-95ba-d7d2147125f6)
 
 ## Spesifikasi API PUT
 
 ### 1. PUT /users/{id}
 Memperbarui data users.
-<img width="637" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/af8cd870-15eb-472d-8747-4b8151297c5b">
+![image](https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/7c5e4342-6443-40af-95bd-1680275ad5f3)
 
 ### 2. PUT /products/{id}
 Memperbarui data products.
-<img width="622" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/aac3e923-8f79-4872-b317-fd633533a242">
+![image](https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/1c7f29c8-19cd-4521-811a-52c6d61d1e84)
 
 ### 3. PUT /orders/{id}
 Memperbarui data orders.
-<img width="622" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/bf5be3ca-5c88-4d00-94a4-63ec139440af">
+![image](https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/535cda2d-da12-4565-8893-3308489825dc)
 
 ### 4. PUT /address/{id}
 Memperbarui data address.
-<img width="633" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/51ab478c-b0ed-4fa5-b9c2-a8d17d61a7d7">
+![image](https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/3361c35b-4c22-4fae-9d58-b07f9f86741d)
 
 ### 5. PUT /order/details/{id}
 Memperbarui data order details.
-<img width="627" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/66f40e3a-c9e4-4dd8-9ace-6a41eb998790">
+![image](https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/2a105f49-da67-43fb-8b94-1ffdf2cacf28)
 
 ## Spesifikasi API DELETE
 
 ### 1. DELETE /users/{id}
 Menghapus data users.
-<img width="633" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/35ddae64-785b-4471-8553-940079ee3720">
+![image](https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/df574f18-9cb7-432e-8bdf-7de900833661)
 
 ### 2. DELETE /products/{id}
 Menghapus data products.
-<img width="627" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/4abad23b-6455-43c4-ac42-d469c1051100">
+![image](https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/9a7838f8-4322-4b6c-bcd7-c386b96a3d54)
 
 ### 3. DELETE /orders/{id}
 Menghapus data orders.
-<img width="625" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/2fdc4b42-7ab8-4607-beb9-e9be1cbd86f3">
+![image](https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/5c0616c5-236e-4413-b543-0109476e2680)
 
 ### 4. DELETE /address/{id}
 Menghapus data address.
-<img width="635" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/a5e6a587-5672-4bf9-b1b7-b986e5b7b4c1">
+![image](https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/e3604ab5-143f-4d4e-9b34-bff0832d46a6)
 
 ### 5. DELETE /order/details/{id}
 Menghapus data order details.
-<img width="628" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/baf098cf-cccb-485a-a39d-b2fb499ef95c">
+![image](https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/ccff80bb-2737-4249-8576-53b7cbcc0846)
 
