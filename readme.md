@@ -17,9 +17,9 @@ Untuk mendapatkan semua daftar users yang ada.\
 <img width="640" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/0ebb9ae2-f661-4ca7-a28b-4b52fa62f016">
 
 ### 2. GET /users/{id}
-Untuk mendapatkan informasi user dan alamatnya.
+Untuk mendapatkan informasi user dan alamatnya.\
 <img width="650" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/7ba497bb-f5cc-4cb1-9fa6-7a90b23bed5e">
-jika tidak ada maka akan muncul pesan error.
+jika tidak ada maka akan muncul pesan error.\
 <img width="647" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/82fd9352-6a4f-4707-af7e-b892e2fc5de6">
 
 ### 3. GET /users/{id}/products
