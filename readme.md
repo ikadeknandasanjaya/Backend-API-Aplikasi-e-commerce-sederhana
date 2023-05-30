@@ -14,7 +14,7 @@ API yang dibuat dengan bahasa pemrograman JAVA untuk memanipulasi data dari data
 
 ### 1. GET /users
 Untuk mendapatkan semua daftar users yang ada.\
-![image](https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/80b543e8-8f46-4062-b772-47692bc5e6f9)
+![image](https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/633dca3e-a201-43e2-8eb8-20f5cfa37dfc)
 
 ### 2. GET /users/{id}
 Untuk mendapatkan informasi user dan alamatnya.\
