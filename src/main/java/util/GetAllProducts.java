@@ -14,8 +14,6 @@ import java.util.List;
 public class GetAllProducts {
     public static List<Product> getAllProducts() throws SQLException {
         List<Product> products = new ArrayList<>();
-
-        // Query untuk mendapatkan semua data produk
         String query = "SELECT * FROM products";
         ECommerceAPI api = new ECommerceAPI();
         try (Connection connection = api.koneksi();

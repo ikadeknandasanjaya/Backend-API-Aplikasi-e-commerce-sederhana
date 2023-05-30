@@ -17,6 +17,7 @@ import java.util.List;
 import static handler.SendResponse.sendResponse;
 import static util.AddAddress.addAddress;
 import static util.DeleteAddress.deleteAddress;
+import static util.UpdateAddress.updateAddress;
 
 
 public class AddressesHandler implements HttpHandler {
@@ -38,6 +39,8 @@ public class AddressesHandler implements HttpHandler {
             String addressId = pathSegments[2];
             if (exchange.getRequestMethod().equals("GET")) {
                 handleGetAddressById(exchange, addressId);
+            } else if (exchange.getRequestMethod().equals("PUT")) {
+                handleUpdateAddress(exchange, addressId);
             } else if (exchange.getRequestMethod().equals("DELETE")) {
                 handleDeleteAddress(exchange, addressId);
             } else {
@@ -46,6 +49,29 @@ public class AddressesHandler implements HttpHandler {
             }
         } else {
             String errorResponse = "Endpoint tidak valid";
+            sendResponse(exchange, errorResponse, 404);
+        }
+    }
+
+    private void handleUpdateAddress(HttpExchange exchange, String addressId) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(exchange.getRequestBody()));
+        StringBuilder requestBody = new StringBuilder();
+        String line;
+        while ((line = reader.readLine()) != null) {
+            requestBody.append(line);
+        }
+        reader.close();
+
+        Gson gson = new GsonBuilder().create();
+        Address updatedAddress = gson.fromJson(requestBody.toString(), Address.class);
+
+        boolean updated = updateAddress(addressId, updatedAddress);
+
+        if (updated) {
+            String response = "Alamat berhasil diperbarui";
+            sendResponse(exchange, response, 200);
+        } else {
+            String errorResponse = "Alamat dengan ID yang diberikan tidak ditemukan";
             sendResponse(exchange, errorResponse, 404);
         }
     }
@@ -123,7 +149,6 @@ public class AddressesHandler implements HttpHandler {
 
         try {
             addAddress(address);
-
             String response = "Alamat berhasil dibuat";
             sendResponse(exchange, response, 201);
         } catch (SQLException e) {

@@ -14,8 +14,6 @@ import java.util.List;
 public class GetUserOrder {
     public static List<Order> getOrder(String orderId) throws SQLException {
         List<Order> orders = new ArrayList<>();
-
-        // Query untuk mendapatkan data pesanan berdasarkan ID pembeli
         String query = "SELECT * FROM orders WHERE buyer = ?";
         ECommerceAPI api = new ECommerceAPI();
         try (Connection connection = api.koneksi();

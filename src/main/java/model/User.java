@@ -1,15 +1,12 @@
 package model;
 
-import java.util.List;
-
 public class User {
     private int id;
     private String first_name;
     private String last_name;
     private String email;
-
-    private List<Product> products; // New field for associated products
-
+    private String phone_number;
+    private String type;
 
     public User(int id, String first_name,String last_name , String email,String phone_number, String type) {
         this.id = id;
@@ -68,14 +65,5 @@ public class User {
         this.type = type;
     }
 
-    private String phone_number;
-    private String type;
 
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
-    }
 }

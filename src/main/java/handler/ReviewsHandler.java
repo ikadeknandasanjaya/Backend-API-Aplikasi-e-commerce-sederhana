@@ -46,11 +46,9 @@ public class ReviewsHandler implements HttpHandler {
 
     private void handleGetReviewById(HttpExchange exchange, String reviewId) throws IOException {
         try {
-            // Mengambil data review dari database berdasarkan reviewId
             List<Review> review = GetReviewsByOrderId.getReviewsByOrderId(reviewId);
 
             if (review != null) {
-                // Mengubah data review menjadi format JSON
                 Gson gson = new GsonBuilder()
                         .disableHtmlEscaping()
                         .setPrettyPrinting()
@@ -85,7 +83,6 @@ public class ReviewsHandler implements HttpHandler {
 
         try {
             UpdateReviews.updateReview(review);
-
             String response = "Review berhasil diperbarui";
             sendResponse(exchange, response, 200);
         } catch (SQLException e) {

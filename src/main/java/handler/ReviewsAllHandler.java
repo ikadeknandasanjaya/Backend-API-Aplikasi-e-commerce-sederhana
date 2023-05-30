@@ -32,10 +32,7 @@ public class ReviewsAllHandler implements HttpHandler {
 
     private void handleGetAllReviews(HttpExchange exchange) throws IOException {
         try {
-            // Mengambil semua reviews dari database
             List<Review> reviews = GetAllReviews.getAllReviews();
-
-            // Mengubah data reviews menjadi format JSON
             Gson gson = new GsonBuilder()
                     .disableHtmlEscaping()
                     .setPrettyPrinting()

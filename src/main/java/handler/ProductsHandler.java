@@ -20,7 +20,6 @@ public class ProductsHandler implements HttpHandler {
     @Override
     public void handle(HttpExchange exchange) throws IOException {
         if ("GET".equals(exchange.getRequestMethod())) {
-            // Ambil produk berdasarkan ID pengguna dan kirimkan sebagai respons
             String path = exchange.getRequestURI().getPath();
             String userId = path.substring(path.lastIndexOf("/") + 1);
 
@@ -41,7 +40,6 @@ public class ProductsHandler implements HttpHandler {
                 sendResponse(exchange, errorResponse, 500);
             }
         } else if ("POST".equals(exchange.getRequestMethod())) {
-            // Tambahkan produk baru
             String requestBody = new String(exchange.getRequestBody().readAllBytes());
             Gson gson = new GsonBuilder().create();
             Product newProduct = gson.fromJson(requestBody, Product.class);
@@ -66,7 +64,6 @@ public class ProductsHandler implements HttpHandler {
                 sendResponse(exchange, errorResponse, 500);
             }
         } else if ("PUT".equals(exchange.getRequestMethod())) {
-            // Update produk berdasarkan ID
             String path = exchange.getRequestURI().getPath();
             String productId = path.substring(path.lastIndexOf("/") + 1);
 
@@ -89,7 +86,6 @@ public class ProductsHandler implements HttpHandler {
 
             sendResponse(exchange, response, statusCode);
         } else if ("DELETE".equals(exchange.getRequestMethod())) {
-            // Hapus produk berdasarkan ID
             String path = exchange.getRequestURI().getPath();
             String productId = path.substring(path.lastIndexOf("/") + 1);
 

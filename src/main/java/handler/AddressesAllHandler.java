@@ -43,7 +43,6 @@ public class AddressesAllHandler implements HttpHandler {
     }
 
     private void handleGetAllAddresses(HttpExchange exchange) throws IOException {
-        // Code untuk mengambil semua alamat pengguna
         try {
             List<Address> addresses = getAllAddresses();
             Gson gson = new GsonBuilder()
@@ -74,7 +73,6 @@ public class AddressesAllHandler implements HttpHandler {
         Address address = gson.fromJson(requestBody.toString(), Address.class);
 
         try {
-            // Code untuk menambahkan alamat baru ke database
             AddAddress.addAddress(address);
 
             String response = "Alamat berhasil ditambahkan";

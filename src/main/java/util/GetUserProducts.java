@@ -14,8 +14,6 @@ import java.util.List;
 public class GetUserProducts {
     public static List<Product> getUserProducts(String userId) throws SQLException {
         List<Product> products = new ArrayList<>();
-
-        // Query untuk mendapatkan produk yang dimiliki oleh pengguna dengan ID tertentu
         String query = "SELECT * FROM products WHERE seller = ?";
         ECommerceAPI api = new ECommerceAPI();
         try (Connection connection = api.koneksi();

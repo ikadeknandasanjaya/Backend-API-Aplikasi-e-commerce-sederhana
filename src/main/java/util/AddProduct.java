@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class AddProduct {
     public static boolean addProduct(Product product) throws SQLException {
         ECommerceAPI api = new ECommerceAPI();
-        String query = "INSERT INTO products (id, seller, title, description, price, stocks) VALUES (?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO products (id, seller, title, description, price, stock) VALUES (?, ?, ?, ?, ?, ?)";
         try (Connection connection = api.koneksi();
              PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, product.getId());

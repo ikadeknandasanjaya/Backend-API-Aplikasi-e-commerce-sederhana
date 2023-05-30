@@ -11,20 +11,12 @@ import java.sql.SQLException;
 
 public class GetUserById {
     public static User getUserById(String userId) throws SQLException {
-//                Objek user dan inisialisasi null terlebih dahulu
         User user = null;
         ECommerceAPI api = new ECommerceAPI();
-
-//                Kueri sql untuk menselect users berdasarkan id
         String sql = "SELECT * FROM users WHERE id = ?";
-
-
         try (Connection konek = api.koneksi();
-//                     Membuat objek dari PreparedStatement untuk ktia gunakan kueri sql didalamnya untuk menghindari SQL Injection
              PreparedStatement param = konek.prepareStatement(sql)) {
-//                     Mengisi nilai parameter dengan index dimulai dari 1
             param.setString(1, userId);
-//                  Resulset untuk mengambil hasil dari kueri
             try (ResultSet hasil = param.executeQuery()) {
                 if (hasil.next()) {
                     int id = hasil.getInt("id");

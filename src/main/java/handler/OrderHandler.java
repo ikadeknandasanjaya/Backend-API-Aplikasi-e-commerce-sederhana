@@ -20,7 +20,6 @@ public class OrderHandler implements HttpHandler {
     @Override
     public void handle(HttpExchange exchange) throws IOException {
         if ("GET".equals(exchange.getRequestMethod())) {
-            // Ambil order berdasarkan ID dan kirimkan sebagai respons
             String path = exchange.getRequestURI().getPath();
             String orderId = path.substring(path.lastIndexOf("/") + 1);
 
@@ -37,7 +36,6 @@ public class OrderHandler implements HttpHandler {
                     String response = gson.toJson(order);
                     sendResponse(exchange, response, 200);
                 } else {
-                    // Order tidak ditemukan
                     String errorResponse = "Order tidak ditemukan";
                     sendResponse(exchange, errorResponse, 404);
                 }
@@ -47,7 +45,6 @@ public class OrderHandler implements HttpHandler {
                 sendResponse(exchange, errorResponse, 500);
             }
         } else if ("PUT".equals(exchange.getRequestMethod())) {
-            // Update order berdasarkan ID
             String path = exchange.getRequestURI().getPath();
             String orderId = path.substring(path.lastIndexOf("/") + 1);
 
@@ -70,7 +67,6 @@ public class OrderHandler implements HttpHandler {
 
             sendResponse(exchange, response, statusCode);
         } else if ("DELETE".equals(exchange.getRequestMethod())) {
-            // Hapus order berdasarkan ID
             String path = exchange.getRequestURI().getPath();
             String orderId = path.substring(path.lastIndexOf("/") + 1);
 
@@ -88,12 +84,10 @@ public class OrderHandler implements HttpHandler {
 
             sendResponse(exchange, response, statusCode);
         } else if ("POST".equals(exchange.getRequestMethod())) {
-            // Tambahkan order baru
             String requestBody = new String(exchange.getRequestBody().readAllBytes());
             Gson gson = new GsonBuilder().create();
             Order newOrder = gson.fromJson(requestBody, Order.class);
 
-            // Panggil method addOrder untuk menambahkan order ke database
             boolean addSuccess = false;
             try {
                 addSuccess = addOrder(newOrder);

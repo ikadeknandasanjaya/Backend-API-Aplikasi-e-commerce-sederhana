@@ -44,11 +44,9 @@ public class DetailsHandler implements HttpHandler {
 
     private void handleGetOrderDetail(HttpExchange exchange, String orderDetailId) throws IOException {
         try {
-            // Mendapatkan order detail berdasarkan ID
             List<OrderDetail> orderDetail =getOrderDetailsByOrderId(orderDetailId);
 
             if (orderDetail != null) {
-                // Mengubah order detail menjadi format JSON
                 Gson gson = new Gson();
                 String response = gson.toJson(orderDetail);
                 sendResponse(exchange, response, 200);
