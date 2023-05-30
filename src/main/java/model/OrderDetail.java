@@ -1,4 +1,4 @@
-package main.java.model;
+package model;
 
 public class OrderDetail {
         private int orderId;
@@ -7,7 +7,21 @@ public class OrderDetail {
         private int price;
 
 
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
+    }
 
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
 
     public OrderDetail(String orderId, int productId, int quantity, int price) {
             this.orderId = Integer.parseInt(orderId);

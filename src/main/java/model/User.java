@@ -1,7 +1,4 @@
-package main.java.model;
-
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
+package model;
 
 import java.util.List;
 

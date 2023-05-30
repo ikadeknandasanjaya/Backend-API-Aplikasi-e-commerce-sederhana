@@ -1,20 +1,20 @@
-package main.java.handler;
+package handler;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
-import main.java.model.Product;
+import model.Product;
 
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-import static main.java.ECommerceAPI.sendResponse;
-import static main.java.util.DeleteProduct.deleteProduct;
-import static main.java.util.GetUserProducts.getUserProducts;
-import static main.java.util.UpdateProduct.updateProduct;
-import static main.java.util.AddProduct.addProduct;
+import static handler.SendResponse.sendResponse;
+import static util.AddProduct.addProduct;
+import static util.DeleteProduct.deleteProduct;
+import static util.GetUserProducts.getUserProducts;
+import static util.UpdateProduct.updateProduct;
 
 public class ProductsHandler implements HttpHandler {
     @Override

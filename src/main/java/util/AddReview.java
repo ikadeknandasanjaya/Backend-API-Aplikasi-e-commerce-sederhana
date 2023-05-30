@@ -1,7 +1,7 @@
-package main.java.util;
+package util;
 
-import main.java.ECommerceAPI;
-import main.java.model.Review;
+import main.ECommerceAPI;
+import model.Review;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class AddReview {
     public static boolean addReview(Review review) throws SQLException {
         ECommerceAPI api = new ECommerceAPI();
-        String query = "INSERT INTO reviews (id_order, star, description) VALUES (?, ?, ?)";
+        String query = "INSERT INTO reviews (order_id, star, description) VALUES (?, ?, ?)";
         try (Connection connection = api.koneksi();
              PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, review.getOrderId());

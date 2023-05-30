@@ -1,8 +1,7 @@
-package main.java.util;
+package util;
 
-import main.java.ECommerceAPI;
-import main.java.model.Address;
-import main.java.model.User;
+import main.ECommerceAPI;
+import model.Address;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,7 +11,7 @@ public class AddAddress {
     public static boolean addAddress(Address address) throws SQLException {
         ECommerceAPI api = new ECommerceAPI();
         try (Connection connection = api.koneksi();) {
-            String query = "INSERT INTO users (type, line1, line2, city, province, postcode) VALUES (?, ?, ?, ?, ?, ?)";
+            String query = "INSERT INTO addresses (type, line1, line2, city, province, postcode) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, address.getType());
             statement.setString(2, address.getLine1());

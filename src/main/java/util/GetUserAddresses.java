@@ -1,7 +1,8 @@
-package main.java.util;
+package util;
 
-import main.java.ECommerceAPI;
-import main.java.model.Address;
+
+import main.ECommerceAPI;
+import model.Address;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,8 +10,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import static main.java.ECommerceAPI.koneksi;
 
 public class GetUserAddresses {
     public static List<Address> getUserAddresses(String userId) throws SQLException {

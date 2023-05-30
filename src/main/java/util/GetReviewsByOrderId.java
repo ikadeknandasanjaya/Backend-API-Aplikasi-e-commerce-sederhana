@@ -1,7 +1,8 @@
-package main.java.util;
+package util;
 
-import main.java.ECommerceAPI;
-import main.java.model.Review;
+
+import main.ECommerceAPI;
+import model.Review;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

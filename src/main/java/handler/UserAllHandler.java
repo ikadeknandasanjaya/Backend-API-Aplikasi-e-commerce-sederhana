@@ -1,4 +1,4 @@
-package main.java.handler;
+package handler;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -6,7 +6,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
-import main.java.model.User;
+import model.User;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,9 +14,9 @@ import java.io.InputStreamReader;
 import java.sql.SQLException;
 import java.util.List;
 
-import static main.java.ECommerceAPI.sendResponse;
-import static main.java.util.AddUser.addUser;
-import static main.java.util.GetAllUser.getAllUsers;
+import static handler.SendResponse.sendResponse;
+import static util.AddUser.addUser;
+import static util.GetAllUser.getAllUsers;
 
 public class UserAllHandler implements HttpHandler {
     @Override

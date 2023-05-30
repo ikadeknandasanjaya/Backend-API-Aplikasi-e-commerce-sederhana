@@ -1,7 +1,8 @@
-package main.java.util;
+package util;
 
-import main.java.ECommerceAPI;
-import main.java.model.OrderDetail;
+
+import main.ECommerceAPI;
+import model.OrderDetail;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,7 +15,7 @@ public class GetOrderDetailsByOrderId {
 
     public static List<OrderDetail> getOrderDetailsByOrderId(String orderId) throws SQLException {
         List<OrderDetail> orderDetails = new ArrayList<>();
-        // membuat objek dari kelas ECommerceAPI untuk mengambil metode didalamnya
+        // membuat objek dari kelas main.ECommerceAPI untuk mengambil metode didalamnya
         ECommerceAPI api = new ECommerceAPI();
 
         // query sql untuk mendapatkan orderid

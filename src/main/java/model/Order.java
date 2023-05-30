@@ -1,6 +1,4 @@
-package main.java.model;
-
-import java.util.List;
+package model;
 
 public class Order {
     private int id;

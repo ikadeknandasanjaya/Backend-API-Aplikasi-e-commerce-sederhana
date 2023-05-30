@@ -1,19 +1,20 @@
-package main.java.handler;
+package handler;
 
 import com.google.gson.*;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
-import main.java.model.*;
-import main.java.util.*;
+import model.*;
+import util.*;
 
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-import static main.java.ECommerceAPI.sendResponse;
-import static main.java.util.DeleteUser.deleteUser;
-import static main.java.util.GetUserOrder.getOrder;
-import static main.java.util.UpdateUser.updateUser;
+import static handler.SendResponse.sendResponse;
+import static util.DeleteUser.deleteUser;
+import static util.GetUserOrder.getOrder;
+import static util.UpdateUser.updateUser;
+
 
 public class UserIDHandler implements HttpHandler {
     @Override
@@ -140,7 +141,7 @@ public class UserIDHandler implements HttpHandler {
     private void handleUserOrders(HttpExchange exchange, String userId) throws IOException {
         if ("GET".equals(exchange.getRequestMethod())) {
             try {
-                List<Order> orders = (List<Order>) getOrder(userId);
+                List<Order> orders = getOrder(userId);
 
                 Gson gson = new GsonBuilder()
                         .disableHtmlEscaping()

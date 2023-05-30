@@ -1,13 +1,15 @@
-package main.java;
+package main;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpServer;
-import main.java.handler.*;
+import handler.*;
 
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class ECommerceAPI {
     //       Inisialisasi DB di sqlite
@@ -33,11 +35,12 @@ public class ECommerceAPI {
         server.createContext("/orders/", new OrderHandler());
         server.createContext("/products", new ProductsAllHandler());
         server.createContext("/products/", new ProductsHandler());
-        server.createContext("/users/addresses", new AddressesHandler());
-        server.createContext("/users/seller", new SellerHandler());
-        server.createContext("/users/buyer", new BuyerHandler());
-        server.createContext("/users/reviews", new ReviewsHandler());
-        server.createContext("/users/orders/details", new DetailsHandler());
+        server.createContext("/address", new AddressesAllHandler());
+        server.createContext("/address/", new AddressesHandler());
+        server.createContext("/reviews", new ReviewsAllHandler());
+        server.createContext("/reviews/", new ReviewsHandler());
+        server.createContext("/orders/details", new DetailsAllHandler());
+        server.createContext("/orders/details/", new DetailsHandler());
 
         server.setExecutor(null);
         server.start();
