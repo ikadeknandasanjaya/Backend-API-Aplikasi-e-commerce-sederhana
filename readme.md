@@ -49,6 +49,14 @@ Mendapatkan informasi produk dan seller
 Mendapatkan stock lebih atau sama dengan dengan 10
 <img width="634" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/db3186b9-6095-4021-95ab-257733e81e31">
 
+### 10. GET /users?type=buyer
+Mendapatkan buyer dengan type buyer.
+<img width="620" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/717cfe86-90f9-499f-b043-592f36c9494f">
+
+### 10. GET /users?type=seller
+Mendapatkan seller dengan type seller.
+<img width="632" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/10ea4fb4-f2f5-43d2-bac6-818550f67f85">
+
 ## Spesifikasi API POST
 
 ### 1. POST /users
