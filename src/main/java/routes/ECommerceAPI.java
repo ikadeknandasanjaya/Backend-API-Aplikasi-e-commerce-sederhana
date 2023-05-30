@@ -1,11 +1,9 @@
-package main;
+package routes;
 
-import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpServer;
 import handler.*;
 
 import java.io.IOException;
-import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -44,14 +42,6 @@ public class ECommerceAPI {
 
         server.setExecutor(null);
         server.start();
-    }
-
-    //    Untuk menangani respon
-    public static void sendResponse(HttpExchange exchange, String response, int statusCode) throws IOException {
-        exchange.sendResponseHeaders(statusCode, response.length());
-        OutputStream outputStream = exchange.getResponseBody();
-        outputStream.write(response.getBytes());
-        outputStream.close();
     }
 }
 
