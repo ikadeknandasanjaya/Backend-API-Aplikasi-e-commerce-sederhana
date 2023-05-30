@@ -23,38 +23,38 @@ jika tidak ada maka akan muncul pesan error.
 <img width="647" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/82fd9352-6a4f-4707-af7e-b892e2fc5de6">
 
 ### 3. GET /users/{id}/products
-Mendapatkan daftar produk milik user.
+Mendapatkan daftar produk milik user.\
 <img width="657" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/5c1fd6ec-a81d-4157-8b1a-93c2577c30b9">
 
 ### 4. GET /users/{id}/orders
-Mendapatkan daftar order milik user.
+Mendapatkan daftar order milik user.\
 <img width="641" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/226568db-c10c-46cd-aab9-06ea573ee0ac">
 
 ### 5. GET /users/{id}/reviews
-Mendapatkan daftar review yg dibuat user.
+Mendapatkan daftar review yg dibuat user.\
 <img width="657" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/06c48698-a7f5-485d-a8db-fec1fbc475eb">
 
 ### 6. GET /orders/{id}
 Mendapatkan informasi order, buyer, order detail, review, produk: title, price.
 
 ### 7. GET /products
-Mendapatkan daftar semua produk.
+Mendapatkan daftar semua produk.\
 <img width="666" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/90289e68-4175-4406-986c-7ccc72618348">
 
 ### 8. GET /products/{id}
-Mendapatkan informasi produk dan seller
+Mendapatkan informasi produk dan seller\
 <img width="667" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/a44ed93d-7f81-4802-9b0f-4d7939277c1e">
 
 ### 9. Filter GET /products?field=stock&cond=largerEqual&val=10
-Mendapatkan stock lebih atau sama dengan dengan 10
+Mendapatkan stock lebih atau sama dengan dengan 10\
 <img width="634" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/db3186b9-6095-4021-95ab-257733e81e31">
 
 ### 10. GET /users?type=buyer
-Mendapatkan buyer dengan type buyer.
+Mendapatkan buyer dengan type buyer.\
 <img width="620" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/717cfe86-90f9-499f-b043-592f36c9494f">
 
 ### 10. GET /users?type=seller
-Mendapatkan seller dengan type seller.
+Mendapatkan seller dengan type seller.\
 <img width="632" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/10ea4fb4-f2f5-43d2-bac6-818550f67f85">
 
 ## Spesifikasi API POST
