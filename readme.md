@@ -36,6 +36,7 @@ Mendapatkan daftar review yg dibuat user.\
 
 ### 6. GET /orders/{id}
 Mendapatkan informasi order, buyer, order detail, review, produk: title, price.
+<img width="632" alt="image" src="https://github.com/ikadeknandasanjaya/Backend-API-Aplikasi-e-commerce-sederhana/assets/112923574/3b4f366d-ddfe-4003-8656-78b4df1d3fe6">
 
 ### 7. GET /products
 Mendapatkan daftar semua produk.\
